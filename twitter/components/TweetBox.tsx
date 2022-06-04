@@ -16,7 +16,7 @@ import {
 } from 'react'
 import toast from 'react-hot-toast'
 import { Tweet, TweetBody } from '../typings'
-
+import { fetchTweets } from '../utils/fetchTweets'
 
 interface Props {
   setTweets: Dispatch<SetStateAction<Tweet[]>>
@@ -37,10 +37,21 @@ function TweetBox({ setTweets }: Props) {
       image: image,
     }
 
-   
-    
+    const result = await fetch(`/api/addTweet`, {
+      body: JSON.stringify(tweetInfo),
+      method: 'POST',
+    })
 
-    
+    const json = await result.json()
+
+    const newTweets = await fetchTweets()
+    setTweets(newTweets)
+
+    toast('Tweet Posted!', {
+      icon: '🚀',
+    })
+    return json
+  }
 
   const handleSubmit = (
     e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
