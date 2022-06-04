@@ -3,6 +3,7 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { Tweet } from '../typings'
 import { fetchTweets } from '../utils/fetchTweets'
+import TweetComponent from './Tweet'
 import TweetBox from './TweetBox'
 
 interface Props {
@@ -38,7 +39,11 @@ function Feed({ tweets: tweetsProp }: Props) {
       </div>
 
       {/* Feed */}
-    
+     
+      
+          <TweetComponent/>
+      
+      
     </div>
   )
 }
