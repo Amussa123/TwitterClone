@@ -2,18 +2,18 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import Sidebar from '../components/Sidebar'
+import Widgets from '../components/Widgets'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+      <div className="mx-auto max-h-screen overflow-hidden lg:max-w-6xl">
       <Head>
-        <title>Twitter Clone</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Twitter 2.0</title>
       </Head>
-      
-      <main className="grid grid-cols-9">
+      <main className="grid grid-cols-9" >
         <Sidebar />
-          </main>
+        <Widgets />
+          </main> 
       
     </div>
   )
