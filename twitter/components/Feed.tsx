@@ -6,6 +6,7 @@ import { fetchTweets } from '../utils/fetchTweets'
 import TweetComponent from './Tweet'
 import TweetBox from './TweetBox'
 
+
 interface Props {
   tweets: Tweet[]
 }
@@ -39,11 +40,11 @@ function Feed({ tweets: tweetsProp }: Props) {
       </div>
 
       {/* Feed */}
-     
-      
-          <TweetComponent/>
-      
-      
+        {/* <div>
+        {tweets.map((tweet) => (
+          <TweetComponent key={tweet._id} tweet={tweet} />
+        ))}
+      </div>   */}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Comment, CommentBody, Tweet } from '../typings'
-import ReactTimeago from 'react-timeago'
+import { Comment, CommentBody, Tweet, TweetBody } from '../typings'
+import TimeAgo from 'react-timeago'
 import {
   ChatAlt2Icon,
   HeartIcon,
@@ -12,7 +12,7 @@ import toast from 'react-hot-toast'
 import { fetchComments } from '../utils/fetchComments'
 
 interface Props {
-  tweet: Tweet
+  tweet : Tweet
 }
 
 function Tweet({ tweet }: Props) {
@@ -78,7 +78,7 @@ function Tweet({ tweet }: Props) {
               @{tweet.username.replace(/\s+/g, '').toLowerCase()} ·
             </p>
 
-            <ReactTimeago
+            <TimeAgo
               className="text-sm text-gray-500"
               date={tweet._createdAt}
             />
@@ -151,7 +151,7 @@ function Tweet({ tweet }: Props) {
                     @{comment.username.replace(/\s+/g, '').toLowerCase()} ·
                   </p>
 
-                  <ReactTimeago
+                  <TimeAgo
                     className="text-sm text-gray-500"
                     date={comment._createdAt}
                   />
