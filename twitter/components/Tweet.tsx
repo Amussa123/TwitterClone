@@ -40,7 +40,7 @@ function Tweet({ tweet }: Props) {
     const comment: CommentBody = {
       comment: input,
       tweetId: tweet._id,
-      username: session?.user?.name || 'Unknown User',
+      username: session?.user?.name || 'Mussamadness',
       profileImg: session?.user?.image || 'https://links.papareact.com/gll',
     }
 
